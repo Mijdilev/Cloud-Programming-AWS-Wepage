@@ -2,7 +2,7 @@
 
 This project provides a complete AWS cloud architecture solution for hosting a webpage with high availability, global distribution, and auto-scaling capabilities, specifically optimized for AWS Free Tier usage. The infrastructure is defined using Terraform (Infrastructure as Code) and includes all necessary components for a basic deployment.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 
@@ -15,7 +15,7 @@ This project provides a complete AWS cloud architecture solution for hosting a w
     ├── webpage.html                     # Webpage file
 ```
 
-## 🚀 Quick Start: Installation and Tuning
+## Quick Start: Installation and Tuning
 
 
 ### Prerequisites
