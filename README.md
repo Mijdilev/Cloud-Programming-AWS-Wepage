@@ -131,17 +131,9 @@ If the plan looks correct, apply the changes to create your AWS infrastructure:
 
 Terraform will prompt you to confirm the action. Type `yes` and press Enter to proceed.
 
-### Step 6: Upload Website Files to S3
-
-Once Terraform has successfully applied, your S3 bucket will be created. Now, upload the example website files to your S3 bucket. Make sure you are in the root project directory (one level above `terraform/`):
-
-```bash
-aws s3 sync website/ s3://<zhidilev-mikhail-static-web-page-2025>/ --acl public-read 
-# Replace the bucket name with your own from tfvars
-```
 
 
-### Step 7: Access Your Website
+### Step 6: Access Your Website
 
 After the Terraform apply is complete, Terraform will output the CloudFront distribution domain name. You can find this in the terminal output or by running:
 
