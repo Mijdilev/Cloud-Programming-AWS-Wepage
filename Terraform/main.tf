@@ -46,6 +46,18 @@ resource "aws_s3_bucket_policy" "static_website_bucket_policy" {
   depends_on = [aws_s3_bucket_public_access_block.static_website_bucket_access]
 }
 
+# Uploads the website files to the S3 Bucket
+resource "aws_s3_object" "webpage_upload" {
+  bucket       = aws_s3_bucket.static_website_bucket.id
+  key          = "webpage.html"
+  source       = "${path.module}/../website/webpage.html" # Path relative to main.tf
+  content_type = "text/html"                               
+  
+  # Ensure the upload happens after the bucket and access permissions are ready
+  depends_on = [aws_s3_bucket_policy.static_website_bucket_policy]
+}
+	
+
 
 # Setting up a Content Delivery Network (CDN) for content caching and global S3 website serving over HTTPS 
 resource "aws_cloudfront_distribution" "s3_distribution" {
